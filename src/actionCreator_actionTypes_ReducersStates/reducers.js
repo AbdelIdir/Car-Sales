@@ -23,11 +23,7 @@ export function carReducer(car = initialCar, action) {
     case types.ADD_FEATURE:
       return {
         ...car,
-        features: [
-          ...car.features.find(randomFeature => {
-            return randomFeature.id === action.payload.id;
-          })
-        ]
+        features: [...car.features, action.payload.id]
       };
     case types.REMOVE_FEATURE:
       return {
