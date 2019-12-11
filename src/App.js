@@ -4,15 +4,18 @@ import { Provider } from "react-redux";
 import Header from "./components/Header";
 import {
   priceReducer,
-  carReducer
+  carReducer,
+  additionalFeaturesReducer
 } from "../src/actionCreator_actionTypes_ReducersStates/reducers";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
 const monsterReducer = combineReducers({
-  price: priceReducer,
-  car: carReducer
+  priceR: priceReducer,
+  carR: carReducer,
+  addFeatures: additionalFeaturesReducer,
+  
 });
 
 const store = createStore(
@@ -48,13 +51,13 @@ const App = () => {
 
   return (
     <div className="boxes">
-      <Provider>
+      <Provider store={store}>
         <div className="box">
           <Header car={state.car} />
           <AddedFeatures car={state.car} />
         </div>
         <div className="box">
-          <AdditionalFeatures additionalFeatures={state.additionalFeatures} />
+          <AdditionalFeatures  />
           <Total car={state.car} additionalPrice={state.additionalPrice} />
         </div>
       </Provider>
