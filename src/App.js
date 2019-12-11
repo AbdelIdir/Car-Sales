@@ -1,16 +1,23 @@
 import React from "react";
-
+import { combineReducers, createStore } from "redux";
 import Header from "./components/Header";
+import {
+  priceReducer,
+  carReducer
+} from "../src/actionCreator_actionTypes_ReducersStates/reducers";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
+const monsterReducer = combineReducers({
+  price: priceReducer,
+  car: carReducer
+});
 
-
-
-
-
-
+const store = createStore(
+  monsterReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const App = () => {
   const state = {
