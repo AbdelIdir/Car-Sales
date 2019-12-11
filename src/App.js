@@ -1,5 +1,6 @@
 import React from "react";
 import { combineReducers, createStore } from "redux";
+import {Provider} from "react-redux";
 import Header from "./components/Header";
 import {
   priceReducer,
