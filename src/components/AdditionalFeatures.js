@@ -3,6 +3,10 @@ import AdditionalFeature from "./AdditionalFeature";
 import { connect } from "react-redux";
 import { addFeature } from "../actionCreator_actionTypes_ReducersStates/actionCreators";
 export const AdditionalFeatures = ({ features, addFeature }) => {
+  const buyItem = item => {
+    addFeature(item);
+  };
+  // console.log(addFeature, features);
   return (
     <div className="content">
       <h4>Additional Features</h4>
@@ -11,8 +15,9 @@ export const AdditionalFeatures = ({ features, addFeature }) => {
           {features.map(item => (
             <AdditionalFeature
               key={item.id}
-              features={item}
-              addFeature={addFeature}
+              feature={item}
+              addFeature={buyItem}
+              id={item.id}
             />
           ))}
         </ol>

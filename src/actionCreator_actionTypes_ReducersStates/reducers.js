@@ -31,16 +31,17 @@ const initialCar = {
 export function carReducer(car = initialCar, action) {
   switch (action.type) {
     case types.ADD_FEATURE:
+      // console.log(action.payload);
       return {
         ...car,
-        features: [...car.features, action.payload.id]
+        features: [...car.features, action.payload.newFeature]
       };
     case types.REMOVE_FEATURE:
       return {
         ...car,
         features: [
           ...car.features.filter(randomFeature => {
-            return randomFeature.id === action.payload.id;
+            return randomFeature.id !== action.payload.id;
           })
         ]
       };

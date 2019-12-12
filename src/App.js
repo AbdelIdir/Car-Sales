@@ -14,8 +14,8 @@ import Total from "./components/Total";
 const monsterReducer = combineReducers({
   priceR: priceReducer,
   carR: carReducer,
-  addFeatures: additionalFeaturesReducer,
-  
+  // carStore: carReducer.features,
+  addFeatures: additionalFeaturesReducer
 });
 
 const store = createStore(
@@ -54,10 +54,10 @@ const App = () => {
       <Provider store={store}>
         <div className="box">
           <Header car={state.car} />
-          <AddedFeatures car={state.car} />
+          <AddedFeatures  />
         </div>
         <div className="box">
-          <AdditionalFeatures  />
+          <AdditionalFeatures />
           <Total car={state.car} additionalPrice={state.additionalPrice} />
         </div>
       </Provider>
