@@ -13,10 +13,3 @@ export function removeFeature(feature) {
     payload: { feature }
   };
 }
-
-// export function calculateTotal(addedNewPrice) {
-//   return {
-//     type: types.CALC_TOTAL,
-//     payload: { addedNewPrice }
-//   };
-// }
