@@ -6,7 +6,6 @@ export const AdditionalFeatures = ({ features, addFeature }) => {
   const buyItem = item => {
     addFeature(item);
   };
-  // console.log(addFeature, features);
   return (
     <div className="content">
       <h4>Additional Features</h4>
