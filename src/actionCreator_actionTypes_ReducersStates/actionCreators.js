@@ -7,15 +7,16 @@ export function addFeature(newFeature) {
   };
 }
 
-export function removeFeature(id) {
+export function removeFeature(feature) {
   return {
     type: types.REMOVE_FEATURE,
-    payload: { id }
+    payload: { feature }
   };
 }
 
-export function calculateTotal() {
-  return {
-    type: types.CALC_TOTAL
-  };
-}
+// export function calculateTotal(addedNewPrice) {
+//   return {
+//     type: types.CALC_TOTAL,
+//     payload: { addedNewPrice }
+//   };
+// }

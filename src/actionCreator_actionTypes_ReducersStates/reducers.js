@@ -13,8 +13,10 @@ import * as types from "./actionTypes";
 const initialAdditionalPrice = 0;
 export function priceReducer(price = initialAdditionalPrice, action) {
   switch (action.type) {
-    case types.CALC_TOTAL:
-      return price + action.payload.addedNewPrice;
+    case types.ADD_FEATURE:
+      return price + action.payload.newFeature.price;
+    case types.REMOVE_FEATURE:
+      return price - action.payload.feature.price;
     default:
       return price;
   }
@@ -40,7 +42,7 @@ export function carReducer(car = initialCar, action) {
         ...car,
         features: [
           ...car.features.filter(
-            randomFeature => randomFeature.id !== action.payload.id
+            randomFeature => randomFeature.id !== action.payload.feature.id
           )
         ]
       };

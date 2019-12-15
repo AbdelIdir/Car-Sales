@@ -14,12 +14,8 @@ export const AddedFeatures = ({ carFeatures, removeFeature }) => {
       <h6>Added features:</h6>
       {carFeatures.features.length ? (
         <ol type="1">
-          {carFeatures.features.map(item => (
-            <AddedFeature
-              key={item.id}
-              feature={item}
-              removeFeature={takeOut}
-            />
+          {carFeatures.features.map((item, i) => (
+            <AddedFeature key={i} feature={item} removeFeature={takeOut} />
           ))}
         </ol>
       ) : (
